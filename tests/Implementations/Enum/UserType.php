@@ -32,7 +32,7 @@ class UserType extends \JosKolenberg\Enum\Enum
      *
      * @return mixed
      */
-    protected static function identifierAttribute()
+    protected function identifierAttribute()
     {
         return 'value';
     }

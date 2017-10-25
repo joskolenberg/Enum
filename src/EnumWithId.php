@@ -38,7 +38,7 @@ abstract class EnumWithId extends Enum
      *
      * @return mixed
      */
-    protected static function identifierAttribute()
+    protected function identifierAttribute()
     {
         return 'id';
     }

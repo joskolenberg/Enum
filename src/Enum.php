@@ -25,9 +25,9 @@ abstract class Enum
     /**
      * Return the name of the attribute which stores the identifier
      *
-     * @return mixed
+     * @return string
      */
-    protected abstract static function identifierAttribute();
+    protected abstract function identifierAttribute();
 
     /**
      * Check if the instances are resolved for the
