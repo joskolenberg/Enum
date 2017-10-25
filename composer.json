@@ -1,5 +1,5 @@
 {
-    "name": "joskolenberg/Enum",
+    "name": "joskolenberg/enum",
     "description": "Enum implementation for PHP",
     "license": "MIT",
     "keywords": ["enum", "laravel", "collections"],
