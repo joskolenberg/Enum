@@ -1,0 +1,21 @@
+{
+    "name": "joskolenberg/enum",
+    "description": "Enum implementation for PHP",
+    "license": "MIT",
+    "keywords": ["enum", "laravel", "collections"],
+    "authors": [
+        {
+            "name": "Jos Kolenberg",
+            "email": "joskolenberg@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "illuminate/support": "^5.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "JosKolenberg\\Enum\\": "src/"
+        }
+    }
+}
