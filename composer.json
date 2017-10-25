@@ -1,5 +1,5 @@
 {
-    "name": "joskolenberg/enum",
+    "name": "joskolenberg/Enum",
     "description": "Enum implementation for PHP",
     "license": "MIT",
     "keywords": ["enum", "laravel", "collections"],
@@ -9,7 +9,7 @@
             "email": "joskolenberg@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
         "illuminate/support": "^5.5"
     },
