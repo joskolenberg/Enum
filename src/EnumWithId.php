@@ -39,4 +39,14 @@ abstract class EnumWithId extends Enum
     {
         return $this->id;
     }
+
+    /**
+     * Return the name of the attribute which stores the identifier
+     *
+     * @return mixed
+     */
+    protected static function identifierAttribute()
+    {
+        return 'id';
+    }
 }

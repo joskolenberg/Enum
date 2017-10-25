@@ -1,6 +1,5 @@
 <?php
 
-include_once "Implementations/Enum/EnumExampleWithoutIdentifierAttribute.php";
 include_once "Implementations/Enum/ProgrammingLanguage.php";
 include_once "Implementations/Enum/UserType.php";
 include_once "Implementations/Enum/UserTypeWithCustomCollection.php";
@@ -8,16 +7,6 @@ include_once "Implementations/Enum/UserTypeCollection.php";
 
 class EnumTest extends \PHPUnit\Framework\TestCase
 {
-
-    /**
-     * @test
-     */
-    public function it_throws_an_exception_when_the_identifierAttribute_has_not_been_set()
-    {
-        $this->expectException(\JosKolenberg\Enum\EnumException::class);
-
-        EnumExampleWithoutIdentifierAttribute::get('test');
-    }
 
     /**
      * @test

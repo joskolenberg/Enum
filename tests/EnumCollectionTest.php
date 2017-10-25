@@ -1,10 +1,5 @@
 <?php
 
-include_once "Implementations/Enum/EnumExampleWithoutIdentifierAttribute.php";
-include_once "Implementations/Enum/ProgrammingLanguage.php";
-include_once "Implementations/Enum/UserType.php";
-include_once "Implementations/Enum/UserTypeWithCustomCollection.php";
-include_once "Implementations/Enum/UserTypeCollection.php";
 include_once "Implementations/EnumWithIdAndName/ExtendedUserType.php";
 
 class EnumCollectionTest extends \PHPUnit\Framework\TestCase

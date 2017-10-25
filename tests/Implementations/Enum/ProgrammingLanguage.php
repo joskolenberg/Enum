@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: joskolenberg
- * Date: 25-10-17
- * Time: 14:33
- */
 class ProgrammingLanguage extends \JosKolenberg\Enum\Enum
 {
 
@@ -13,8 +7,6 @@ class ProgrammingLanguage extends \JosKolenberg\Enum\Enum
      * @var
      */
     protected $key;
-
-    protected $identifierAttribute = 'key';
 
     public function __construct($key)
     {
@@ -33,5 +25,15 @@ class ProgrammingLanguage extends \JosKolenberg\Enum\Enum
             new static('java'),
             new static('ruby'),
         ];
+    }
+
+    /**
+     * Return the name of the attribute which stores the identifier
+     *
+     * @return mixed
+     */
+    protected static function identifierAttribute()
+    {
+        return 'key';
     }
 }

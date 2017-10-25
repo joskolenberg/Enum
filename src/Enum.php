@@ -9,13 +9,6 @@ abstract class Enum
 {
 
     /**
-     * The name of the attribute which stores the identifier
-     *
-     * @var string
-     */
-    protected $identifierAttribute;
-
-    /**
      * The array with collections of resolved Enums
      *
      * @var array
@@ -28,6 +21,13 @@ abstract class Enum
      * @return array
      */
     protected abstract static function seed();
+
+    /**
+     * Return the name of the attribute which stores the identifier
+     *
+     * @return mixed
+     */
+    protected abstract static function identifierAttribute();
 
     /**
      * Check if the instances are resolved for the
@@ -135,9 +135,7 @@ abstract class Enum
      */
     public function identifier()
     {
-        if (!$this->identifierAttribute) throw new EnumException('Missing identifierAttribute in ' . get_called_class());
-
-        return $this->{$this->identifierAttribute};
+        return $this->{$this->identifierAttribute()};
     }
 
     /**

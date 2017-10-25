@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: joskolenberg
- * Date: 25-10-17
- * Time: 14:44
- */
 class UserType extends \JosKolenberg\Enum\Enum
 {
 
@@ -13,8 +7,6 @@ class UserType extends \JosKolenberg\Enum\Enum
      * @var
      */
     protected $value;
-
-    protected $identifierAttribute = 'value';
 
     public function __construct($value)
     {
@@ -33,5 +25,15 @@ class UserType extends \JosKolenberg\Enum\Enum
             new static('admin'),
             new static('user'),
         ];
+    }
+
+    /**
+     * Return the name of the attribute which stores the identifier
+     *
+     * @return mixed
+     */
+    protected static function identifierAttribute()
+    {
+        return 'value';
     }
 }
