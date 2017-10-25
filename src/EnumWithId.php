@@ -14,13 +14,6 @@ abstract class EnumWithId extends Enum
     protected $id;
 
     /**
-     * The name of the attribute which stores the identifier
-     *
-     * @var string
-     */
-    protected $identifierAttribute = 'id';
-
-    /**
      * AbstractEnumWithId constructor.
      *
      * @param $id
