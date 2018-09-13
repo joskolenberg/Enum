@@ -1,6 +1,7 @@
 [![Build Status](https://travis-ci.org/joskolenberg/Enum.svg?branch=master)](https://travis-ci.org/joskolenberg/Enum.svg?branch=master)
 [![Total Downloads](https://poser.pugx.org/joskolenberg/enum/downloads)](https://packagist.org/packages/joskolenberg/enum)
 [![Latest Stable Version](https://poser.pugx.org/joskolenberg/enum/v/stable)](https://packagist.org/packages/joskolenberg/enum)
+[![StyleCI](https://github.styleci.io/repos/108286200/shield?branch=master)](https://github.styleci.io/repos/108286200)
 [![License](https://poser.pugx.org/joskolenberg/enum/license)](https://packagist.org/packages/joskolenberg/enum)
 
 # Enum
@@ -10,7 +11,13 @@ Enum implementation for PHP
 
 Use composer to pull this package in.
 
-```js
+### With Composer
+
+```
+$ composer require joskolenberg/enum
+```
+
+```json
     "require": {
         "joskolenberg/enum": "^1.0"
     },
