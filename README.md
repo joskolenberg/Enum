@@ -2,6 +2,7 @@
 [![Total Downloads](https://poser.pugx.org/joskolenberg/enum/downloads)](https://packagist.org/packages/joskolenberg/enum)
 [![Latest Stable Version](https://poser.pugx.org/joskolenberg/enum/v/stable)](https://packagist.org/packages/joskolenberg/enum)
 [![StyleCI](https://github.styleci.io/repos/108286200/shield?branch=master)](https://github.styleci.io/repos/108286200)
+[![Code Coverage](https://codecov.io/gh/joskolenberg/enum/branch/master/graph/badge.svg)](https://codecov.io/gh/joskolenberg/enum/branch/master/graph/badge.svg)
 [![License](https://poser.pugx.org/joskolenberg/enum/license)](https://packagist.org/packages/joskolenberg/enum)
 
 # Enum
