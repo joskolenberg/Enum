@@ -17,12 +17,6 @@ Use composer to pull this package in.
 $ composer require joskolenberg/enum
 ```
 
-```json
-    "require": {
-        "joskolenberg/enum": "^1.0"
-    },
-```
-
 ## Usage
 
 ### Setting up an enum
