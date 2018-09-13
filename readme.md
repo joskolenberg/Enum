@@ -6,17 +6,13 @@
 # Enum
 Enum implementation for PHP
 
-## Intro
-PHP doesn't come with Enums out of the box, this package isn't an exact enum implementation either but has it's own pros and cons.
-
-
 ## Installing
 
 Use composer to pull this package in.
 
 ```js
     "require": {
-        "joskolenberg/enum": "0.1.*"
+        "joskolenberg/enum": "^1.0"
     },
 ```
 
@@ -80,36 +76,29 @@ class UserType extends Enum
 }
 ```
 
-Next, the class can be designed like way you would any other. Although enums aren't meant to have too much functionality on them.
+Next, the class can be designed like way you would any other.
 
 ### Repository
 The class offers the following static "repository-like" methods:
 - `get()` return the enum with the given identifier.
 - `random()` return a random identifier (e.g. for seeding).
-- `collection()` return an Illuminate\Support\Collection containing all enums. This collection class gives some easy flexibility in adjusting the list. (e.g. sorting it)
+- `collection()` return an Illuminate\Support\Collection containing all enums.
 - `identifiers()` return an Illuminate\Support\Collection containing only the identifiers for the enums.
 - `exists()` tell if an enum with the given identifier exists.
 
 Enums are also available using a magic method with the same name as the identifier. e.g. `UserType::get('dev')` equals `UserType::dev()`
 
-For clarity and code-completion though we encourage you to implement these methods like:
-```php
-public function dev(){
-    return static::get('dev');
-}
-```
-
 ### Enum
 The enum itself has the following methods:
 - `identifier()` return the identifier value (e.g. 'dev' or 'admin' in the previous example) of this instance.
-- `equals()` check if the given enum matches the current.
+- `equals(Enum $enum)` check if the given enum matches the current.
 
-All defined attributes are by default available as read-only using magic getters:
+All defined attributes are by default available as read-only:
 - `$value = $userType->value` passes.
 - `$userType->value = 'changed'` fails.
 
 ### Custom Classes
-If different enums of the same type should have different behaviour you could of course extend the base enum to more specific ones.
+If different enums of the same type should have different behaviour you can extend the base enum to more specific ones.
 ```php
 class UserType extends Enum
 {
@@ -200,7 +189,7 @@ class ExtendedUserType extends \JosKolenberg\Enum\EnumWithIdAndName
     }
 }
 ```
-Of course you can always create your own baseclass if you wish for different attributes on all of your enums.
+Or create your own baseclass if you wish for different attributes on all of your enums.
 
 Happy coding!
 
