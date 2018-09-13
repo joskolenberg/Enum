@@ -2,9 +2,8 @@
 
 class ExtendedUserType extends \JosKolenberg\Enum\EnumWithIdAndName
 {
-
     /**
-     * Seed the class with Enum instances
+     * Seed the class with Enum instances.
      *
      * @return array
      */

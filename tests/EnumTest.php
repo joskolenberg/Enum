@@ -1,13 +1,12 @@
 <?php
 
-include_once "Implementations/Enum/ProgrammingLanguage.php";
-include_once "Implementations/Enum/UserType.php";
-include_once "Implementations/Enum/UserTypeWithCustomCollection.php";
-include_once "Implementations/Enum/UserTypeCollection.php";
+include_once 'Implementations/Enum/ProgrammingLanguage.php';
+include_once 'Implementations/Enum/UserType.php';
+include_once 'Implementations/Enum/UserTypeWithCustomCollection.php';
+include_once 'Implementations/Enum/UserTypeCollection.php';
 
 class EnumTest extends \PHPUnit\Framework\TestCase
 {
-
     /**
      * @test
      */
