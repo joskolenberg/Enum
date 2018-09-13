@@ -2,7 +2,6 @@
 
 class UserType extends \JosKolenberg\Enum\Enum
 {
-
     /**
      * @var
      */
@@ -14,7 +13,7 @@ class UserType extends \JosKolenberg\Enum\Enum
     }
 
     /**
-     * Seed the class with Enum instances
+     * Seed the class with Enum instances.
      *
      * @return array
      */
@@ -28,7 +27,7 @@ class UserType extends \JosKolenberg\Enum\Enum
     }
 
     /**
-     * Return the name of the attribute which stores the identifier
+     * Return the name of the attribute which stores the identifier.
      *
      * @return mixed
      */

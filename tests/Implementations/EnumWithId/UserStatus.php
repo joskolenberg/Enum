@@ -2,9 +2,8 @@
 
 class UserStatus extends \JosKolenberg\Enum\EnumWithId
 {
-
     /**
-     * Seed the class with Enum instances
+     * Seed the class with Enum instances.
      *
      * @return array
      */

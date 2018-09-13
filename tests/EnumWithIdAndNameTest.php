@@ -1,10 +1,9 @@
 <?php
 
-include_once "Implementations/EnumWithIdAndName/ExtendedUserType.php";
+include_once 'Implementations/EnumWithIdAndName/ExtendedUserType.php';
 
 class EnumWithIdAndNameTest extends \PHPUnit\Framework\TestCase
 {
-
     /**
      * @test
      */

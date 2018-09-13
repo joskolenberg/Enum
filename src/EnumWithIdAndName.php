@@ -2,12 +2,10 @@
 
 namespace JosKolenberg\Enum;
 
-
 abstract class EnumWithIdAndName extends EnumWithId
 {
-
     /**
-     * The displayname for the instance
+     * The displayname for the instance.
      *
      * @var mixed
      */
@@ -26,7 +24,7 @@ abstract class EnumWithIdAndName extends EnumWithId
     }
 
     /**
-     * Get the name attribute
+     * Get the name attribute.
      *
      * @return mixed
      */
@@ -34,5 +32,4 @@ abstract class EnumWithIdAndName extends EnumWithId
     {
         return $this->name;
     }
-
 }
