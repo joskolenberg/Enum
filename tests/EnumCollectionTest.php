@@ -1,10 +1,9 @@
 <?php
 
-include_once "Implementations/EnumWithIdAndName/ExtendedUserType.php";
+include_once 'Implementations/EnumWithIdAndName/ExtendedUserType.php';
 
 class EnumCollectionTest extends \PHPUnit\Framework\TestCase
 {
-
     /**
      * @test
      */
@@ -48,5 +47,4 @@ class EnumCollectionTest extends \PHPUnit\Framework\TestCase
         $this->assertTrue($userTypes->hasIdentifier('dev'));
         $this->assertFalse($userTypes->hasIdentifier('unknown'));
     }
-
 }

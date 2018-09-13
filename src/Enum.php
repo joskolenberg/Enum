@@ -2,51 +2,53 @@
 
 namespace JosKolenberg\Enum;
 
-
 use Illuminate\Support\Collection;
 
 abstract class Enum
 {
-
     /**
-     * The array with collections of resolved Enums
+     * The array with collections of resolved Enums.
      *
      * @var array
      */
     protected static $resolvedInstances = [];
 
     /**
-     * Seed the class with Enum instances
+     * Seed the class with Enum instances.
      *
      * @return array
      */
-    protected abstract static function seed();
+    abstract protected static function seed();
 
     /**
-     * Return the name of the attribute which stores the identifier
+     * Return the name of the attribute which stores the identifier.
      *
      * @return string
      */
-    protected abstract function identifierAttribute();
+    abstract protected function identifierAttribute();
 
     /**
      * Check if the instances are resolved for the
-     * current class and if not, resolve them
+     * current class and if not, resolve them.
      *
      * @param $class
+     *
      * @return void
      */
     protected static function bootIfNotBooted($class)
     {
-        if (isset(static::$resolvedInstances[$class])) return;
+        if (isset(static::$resolvedInstances[$class])) {
+            return;
+        }
 
         static::$resolvedInstances[$class] = $class::newCollection($class::seed());
     }
 
     /**
-     * Return a new Collection instance
+     * Return a new Collection instance.
      *
      * @param array $enums
+     *
      * @return EnumCollection
      */
     protected static function newCollection(array $enums = [])
@@ -55,21 +57,24 @@ abstract class Enum
     }
 
     /**
-     * Get an enum by identifier
+     * Get an enum by identifier.
      *
      * @param $identifier
-     * @return Enum
+     *
      * @throws EnumNotFoundException
+     *
+     * @return Enum
      */
     public static function get($identifier)
     {
-        if (!static::exists($identifier)) throw new EnumNotFoundException();
-
+        if (!static::exists($identifier)) {
+            throw new EnumNotFoundException();
+        }
         return static::collection()->byIdentifier($identifier);
     }
 
     /**
-     * Return a random Enum
+     * Return a random Enum.
      *
      * @return Enum
      */
@@ -79,7 +84,7 @@ abstract class Enum
     }
 
     /**
-     * Return a collection with all Enums
+     * Return a collection with all Enums.
      *
      * @return Collection
      */
@@ -93,12 +98,13 @@ abstract class Enum
 
     /**
      * Make it possible to retrieve an Enum by using it's identifier
-     * as a function name
+     * as a function name.
      *
      * e.g. UserType::get('dev') equals UserType::dev()
      *
      * @param $name
      * @param $arguments
+     *
      * @return Enum
      */
     public static function __callStatic($name, $arguments)
@@ -107,9 +113,10 @@ abstract class Enum
     }
 
     /**
-     * Make the attributes readable from the outside
+     * Make the attributes readable from the outside.
      *
      * @param $field
+     *
      * @return mixed
      */
     public function __get($field)
@@ -118,7 +125,7 @@ abstract class Enum
     }
 
     /**
-     * Present the instance as the identifier when casted to a string
+     * Present the instance as the identifier when casted to a string.
      *
      * @return mixed
      */
@@ -128,10 +135,11 @@ abstract class Enum
     }
 
     /**
-     * Get the identifier for the instance
+     * Get the identifier for the instance.
+     *
+     * @throws EnumException
      *
      * @return mixed
-     * @throws EnumException
      */
     public function identifier()
     {
@@ -139,18 +147,19 @@ abstract class Enum
     }
 
     /**
-     * Test if the given Enum equals the current
+     * Test if the given Enum equals the current.
      *
      * @param Enum $enum
+     *
      * @return bool
      */
-    public function equals(Enum $enum)
+    public function equals(self $enum)
     {
-        return ($this === $enum);
+        return $this === $enum;
     }
 
     /**
-     * Get a collection with only the identifiers
+     * Get a collection with only the identifiers.
      *
      * @return mixed
      */
@@ -160,9 +169,10 @@ abstract class Enum
     }
 
     /**
-     * Check if an Enum with the given identifier exists
+     * Check if an Enum with the given identifier exists.
      *
      * @param $identifier
+     *
      * @return mixed
      */
     public static function exists($identifier)

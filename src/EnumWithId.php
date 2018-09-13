@@ -2,12 +2,10 @@
 
 namespace JosKolenberg\Enum;
 
-
 abstract class EnumWithId extends Enum
 {
-
     /**
-     * The identifier for the instance
+     * The identifier for the instance.
      *
      * @var mixed
      */
@@ -24,7 +22,7 @@ abstract class EnumWithId extends Enum
     }
 
     /**
-     * Get the id attribute
+     * Get the id attribute.
      *
      * @return mixed
      */
@@ -34,7 +32,7 @@ abstract class EnumWithId extends Enum
     }
 
     /**
-     * Return the name of the attribute which stores the identifier
+     * Return the name of the attribute which stores the identifier.
      *
      * @return mixed
      */

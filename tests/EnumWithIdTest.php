@@ -1,10 +1,9 @@
 <?php
 
-include_once "Implementations/EnumWithId/UserStatus.php";
+include_once 'Implementations/EnumWithId/UserStatus.php';
 
 class EnumWithIdTest extends \PHPUnit\Framework\TestCase
 {
-
     /**
      * @test
      */

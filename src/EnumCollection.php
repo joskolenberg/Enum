@@ -2,12 +2,10 @@
 
 namespace JosKolenberg\Enum;
 
-
 use Illuminate\Support\Collection;
 
 class EnumCollection extends Collection
 {
-
     public function identifiers()
     {
         return $this->map(function (Enum $enum) {
