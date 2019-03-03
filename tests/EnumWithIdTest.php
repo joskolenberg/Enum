@@ -18,7 +18,7 @@ class EnumWithIdTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function it_can_give_the_id_attibute_by_the_getId_method()
+    public function it_can_give_the_id_attribute_by_the_getId_method()
     {
         $userStatus = UserStatus::get('active');
 
