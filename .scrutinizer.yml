@@ -1,0 +1,51 @@
+filter:
+  excluded_paths:
+    - tests/
+  dependency_paths:
+    - vendor/
+
+checks:
+  php: true
+
+build:
+  environment:
+    mysql: false
+    postgresql: false
+    mongodb: false
+    elasticsearch: false
+    redis: false
+    memcached: false
+    neo4j: false
+    rabbitmq: false
+
+  tests:
+    override:
+      - php-scrutinizer-run
+      -
+        command: 'vendor/bin/phpunit --coverage-clover=codecov'
+        coverage:
+          file: 'codecov'
+          format: 'clover'
+
+  nodes:
+    php70-lowest:
+      environment:
+        php: 7.0
+      dependencies:
+        override:
+          - composer update --no-interaction --prefer-lowest
+
+    php70:
+      environment:
+        php: 7.0
+
+    php73-lowest:
+      environment:
+        php: 7.3
+      dependencies:
+        override:
+          - composer update --no-interaction --prefer-lowest
+
+    php73:
+      environment:
+        php: 7.3
