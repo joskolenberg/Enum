@@ -1,5 +1,7 @@
 <?php
 
+use PHPUnit\Framework\Attributes\Test;
+
 include_once 'Implementations/Enum/ProgrammingLanguage.php';
 include_once 'Implementations/Enum/UserType.php';
 include_once 'Implementations/Enum/UserTypeWithCustomCollection.php';
@@ -7,9 +9,7 @@ include_once 'Implementations/Enum/UserTypeCollection.php';
 
 class EnumTest extends \PHPUnit\Framework\TestCase
 {
-    /**
-     * @test
-     */
+    #[Test]
     public function it_can_return_an_enum_using_the_get_method()
     {
         $userTypeDev = UserType::get('user');
@@ -17,9 +17,7 @@ class EnumTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('user', $userTypeDev->identifier());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function it_can_return_an_enum_using_the_magic_getter_method()
     {
         $userTypeDev = UserType::dev();
@@ -27,9 +25,7 @@ class EnumTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('dev', $userTypeDev->identifier());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function it_throws_an_exception_when_an_enum_is_not_found_with_the_given_identifier()
     {
         $this->expectException(\JosKolenberg\Enum\EnumNotFoundException::class);
@@ -37,9 +33,7 @@ class EnumTest extends \PHPUnit\Framework\TestCase
         UserType::not_available();
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function it_returns_the_identifier_based_on_the_identifierAttribute_attribute()
     {
         $userTypeDev = UserType::dev();
@@ -50,9 +44,7 @@ class EnumTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($programmingLanguagePhp->identifier(), $programmingLanguagePhp->key);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function it_can_handle_multiple_implementations()
     {
         $userTypeDev = UserType::get('dev');
@@ -66,9 +58,7 @@ class EnumTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('java', $programmingLanguageJava->identifier());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function it_can_use_a_custom_collection()
     {
         $userTypeCollection = UserTypeWithCustomCollection::collection();
@@ -76,9 +66,7 @@ class EnumTest extends \PHPUnit\Framework\TestCase
         $this->assertInstanceOf(UserTypeCollection::class, $userTypeCollection);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function it_can_give_a_random_enum()
     {
         $dev = $admin = $user = 0;
@@ -94,9 +82,7 @@ class EnumTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(100, $user + $admin + $dev);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function it_can_return_a_collection_of_enums()
     {
         $userTypes = UserType::collection();
@@ -105,9 +91,7 @@ class EnumTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(3, $userTypes->count());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function its_attributes_are_gettable_but_not_settable()
     {
         $userType = UserType::dev();
@@ -119,9 +103,7 @@ class EnumTest extends \PHPUnit\Framework\TestCase
         $userType->value = 'not allowed';
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function it_returns_the_identifier_when_casted_to_a_string()
     {
         $userType = UserType::dev();
@@ -129,9 +111,7 @@ class EnumTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('dev', (string) $userType);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function it_can_check_weather_two_enums_are_equal()
     {
         $userType = UserType::dev();
@@ -140,9 +120,7 @@ class EnumTest extends \PHPUnit\Framework\TestCase
         $this->assertTrue($userType->equals($userType2));
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function it_only_seeds_the_enums_once_so_there_can_be_only_one_instance_of_each_enum()
     {
         $userTypeDev = UserType::get('dev');
@@ -154,9 +132,7 @@ class EnumTest extends \PHPUnit\Framework\TestCase
         $this->assertTrue($userTypeDev->equals($userTypeDev2));
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function enums_are_not_meant_to_be_created_manually_and_will_not_be_considered_equal()
     {
         $userTypeDev = UserType::get('dev');
@@ -165,9 +141,7 @@ class EnumTest extends \PHPUnit\Framework\TestCase
         $this->assertFalse($userTypeDev->equals($userTypeDev2));
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function it_can_return_a_collection_of_only_the_identifiers_of_the_enums()
     {
         $userTypes = UserType::identifiers();
@@ -175,9 +149,7 @@ class EnumTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(['dev', 'admin', 'user'], $userTypes->toArray());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function it_can_tell_if_an_enum_exists()
     {
         $this->assertTrue(UserType::exists('dev'));

@@ -1,12 +1,12 @@
 <?php
 
+use PHPUnit\Framework\Attributes\Test;
+
 include_once 'Implementations/EnumWithIdAndName/ExtendedUserType.php';
 
 class EnumCollectionTest extends \PHPUnit\Framework\TestCase
 {
-    /**
-     * @test
-     */
+    #[Test]
     public function it_can_return_a_collection_of_only_the_identifiers()
     {
         $userTypes = ExtendedUserType::collection();
@@ -14,9 +14,7 @@ class EnumCollectionTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(['dev', 'admin', 'user'], $userTypes->identifiers()->toArray());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function it_can_return_an_enum_based_on_the_identifier()
     {
         $userTypes = ExtendedUserType::collection();
@@ -26,9 +24,7 @@ class EnumCollectionTest extends \PHPUnit\Framework\TestCase
         $this->assertTrue($userTypeDev->equals($userTypeDev2));
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function it_return_null_if_an_enum_based_on_the_identifier_is_not_found()
     {
         $userTypes = ExtendedUserType::collection();
@@ -37,9 +33,7 @@ class EnumCollectionTest extends \PHPUnit\Framework\TestCase
         $this->assertNull($unknownUserType);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function it_can_tell_if_an_enum_with_a_certain_identifier_exists_in_the_collection()
     {
         $userTypes = ExtendedUserType::collection();

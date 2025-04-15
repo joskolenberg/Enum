@@ -1,12 +1,12 @@
 <?php
 
+use PHPUnit\Framework\Attributes\Test;
+
 include_once 'Implementations/EnumWithIdAndName/ExtendedUserType.php';
 
 class EnumWithCodeAndValueTest extends \PHPUnit\Framework\TestCase
 {
-    /**
-     * @test
-     */
+    #[Test]
     public function it_has_the_value_attibute()
     {
         $invoiceStatus = InvoiceStatus::get('paid');
@@ -15,9 +15,7 @@ class EnumWithCodeAndValueTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('Has been paid', $invoiceStatus->getValue());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function it_has_the_code_attribute_set_as_identifier()
     {
         $invoiceStatus = InvoiceStatus::get('concept');
@@ -29,9 +27,7 @@ class EnumWithCodeAndValueTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('In concept', $invoiceStatus->getValue());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function it_can_give_the_code_attribute_by_the_geCode_method()
     {
         $invoiceStatus = InvoiceStatus::get('final');
